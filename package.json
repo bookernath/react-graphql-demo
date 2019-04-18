@@ -1,9 +1,9 @@
 {
-  "name": "react-graphql",
+  "name": "bc-react-graphql",
   "version": "0.1.0",
   "private": true,
-  "author": "@soorajchandran",
-  "homepage": "http://soorajchandran.github.io/react-graphql-demo",
+  "author": "@bookernath",
+  "homepage": "https://bc-prototypes-njb.appspot.com/",
   "dependencies": {
     "apollo-boost": "^0.1.4",
     "bootstrap": "^4.1.0",
@@ -28,7 +28,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
+    "start": "REACT_APP_STAGE=dev react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",

@@ -1,23 +1,30 @@
 import React from 'react'
 import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
-import Books from './Books'
+import Products from './Products'
+
+let basePath = '';
+if (window.storefrontApiBaseUrl) {
+    basePath = window.storefrontApiBaseUrl;
+} else if (process.env.REACT_APP_STAGE === 'dev') {
+    basePath = 'https://bigcommerce.support'
+}
 
 const client = new ApolloClient({
-  uri: 'https://r95kv5p84n.lp.gql.zone/graphql',
-})
+  uri: `${basePath}/graphql`
+});
 
 const App = () => (
   <ApolloProvider client={client}>
     <nav className="navbar">
       <a className="navbar-brand" href="">
-        GraphQL in React - Demo application
+        Demo React Storefront
       </a>
     </nav>
     <div className="container">
-      <Books />
+      <Products />
     </div>
   </ApolloProvider>
-)
+);
 
 export default App
